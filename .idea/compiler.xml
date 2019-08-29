@@ -6,7 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="spark-service" />
+        <module name="dsl" />
+        <module name="spark-service-core" />
       </profile>
     </annotationProcessing>
   </component>
