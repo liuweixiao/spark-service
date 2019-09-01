@@ -27,20 +27,27 @@ import org.antlr.v4.runtime.tree.{ErrorNode, TerminalNode}
   * Created by allwefantasy on 11/9/2018.
   */
 abstract class BaseParseListenerextends extends DSLSQLListener {
-
   /**
-    * Enter a parse tree produced by {@link DSLSQLParser#rawCommandValue}.
+    * Enter a parse tree produced by {@link DSLSQLParser#statement}.
     *
     * @param ctx the parse tree
     */
-  override def enterRawCommandValue(ctx: RawCommandValueContext): Unit = {}
+  override def enterStatement(ctx: StatementContext): Unit = {}
 
   /**
-    * Exit a parse tree produced by {@link DSLSQLParser#rawCommandValue}.
+    * Exit a parse tree produced by {@link DSLSQLParser#statement}.
     *
     * @param ctx the parse tree
     */
-  override def exitRawCommandValue(ctx: RawCommandValueContext): Unit = {}
+  override def exitStatement(ctx: StatementContext): Unit = {}
+
+  /**
+    * Enter a parse tree produced by {@link DSLSQLParser#sql}.
+    *
+    * @param ctx the parse tree
+    */
+  override def enterSql(ctx: SqlContext): Unit = {}
+
 
   /**
     * Enter a parse tree produced by {@link DSLSQLParser#as}.
@@ -113,6 +120,132 @@ abstract class BaseParseListenerextends extends DSLSQLListener {
   override def exitWhereExpressions(ctx: WhereExpressionsContext): Unit = {}
 
   /**
+    * Enter a parse tree produced by {@link DSLSQLParser#overwrite}.
+    *
+    * @param ctx the parse tree
+    */
+  override def enterOverwrite(ctx: OverwriteContext): Unit = {}
+
+  /**
+    * Exit a parse tree produced by {@link DSLSQLParser#overwrite}.
+    *
+    * @param ctx the parse tree
+    */
+  override def exitOverwrite(ctx: OverwriteContext): Unit = {}
+
+  /**
+    * Enter a parse tree produced by {@link DSLSQLParser#append}.
+    *
+    * @param ctx the parse tree
+    */
+  override def enterAppend(ctx: AppendContext): Unit = {}
+
+  /**
+    * Exit a parse tree produced by {@link DSLSQLParser#append}.
+    *
+    * @param ctx the parse tree
+    */
+  override def exitAppend(ctx: AppendContext): Unit = {}
+
+  /**
+    * Enter a parse tree produced by {@link DSLSQLParser#errorIfExists}.
+    *
+    * @param ctx the parse tree
+    */
+  override def enterErrorIfExists(ctx: ErrorIfExistsContext): Unit = {}
+
+  /**
+    * Exit a parse tree produced by {@link DSLSQLParser#errorIfExists}.
+    *
+    * @param ctx the parse tree
+    */
+  override def exitErrorIfExists(ctx: ErrorIfExistsContext): Unit = {}
+
+  /**
+    * Enter a parse tree produced by {@link DSLSQLParser#ignore}.
+    *
+    * @param ctx the parse tree
+    */
+  override def enterIgnore(ctx: IgnoreContext): Unit = {}
+
+  /**
+    * Exit a parse tree produced by {@link DSLSQLParser#ignore}.
+    *
+    * @param ctx the parse tree
+    */
+  override def exitIgnore(ctx: IgnoreContext): Unit = {}
+
+  /**
+    * Enter a parse tree produced by {@link DSLSQLParser#booleanExpression}.
+    *
+    * @param ctx the parse tree
+    */
+  override def enterBooleanExpression(ctx: BooleanExpressionContext): Unit = {}
+
+  /**
+    * Exit a parse tree produced by {@link DSLSQLParser#booleanExpression}.
+    *
+    * @param ctx the parse tree
+    */
+  override def exitBooleanExpression(ctx: BooleanExpressionContext): Unit = {}
+
+  /**
+    * Enter a parse tree produced by {@link DSLSQLParser#expression}.
+    *
+    * @param ctx the parse tree
+    */
+  override def enterExpression(ctx: ExpressionContext): Unit = {}
+
+  /**
+    * Exit a parse tree produced by {@link DSLSQLParser#expression}.
+    *
+    * @param ctx the parse tree
+    */
+  override def exitExpression(ctx: ExpressionContext): Unit = {}
+
+  /**
+    * Enter a parse tree produced by {@link DSLSQLParser#ender}.
+    *
+    * @param ctx the parse tree
+    */
+  override def enterEnder(ctx: EnderContext): Unit = {}
+
+  /**
+    * Exit a parse tree produced by {@link DSLSQLParser#ender}.
+    *
+    * @param ctx the parse tree
+    */
+  override def exitEnder(ctx: EnderContext): Unit = {}
+
+  /**
+    * Enter a parse tree produced by {@link DSLSQLParser#format}.
+    *
+    * @param ctx the parse tree
+    */
+  override def enterFormat(ctx: FormatContext): Unit = {}
+
+  /**
+    * Exit a parse tree produced by {@link DSLSQLParser#format}.
+    *
+    * @param ctx the parse tree
+    */
+  override def exitFormat(ctx: FormatContext): Unit = {}
+
+  /**
+    * Enter a parse tree produced by {@link DSLSQLParser#path}.
+    *
+    * @param ctx the parse tree
+    */
+  override def enterPath(ctx: PathContext): Unit = {}
+
+  /**
+    * Exit a parse tree produced by {@link DSLSQLParser#path}.
+    *
+    * @param ctx the parse tree
+    */
+  override def exitPath(ctx: PathContext): Unit = {}
+
+  /**
     * Enter a parse tree produced by {@link DSLSQLParser#commandValue}.
     *
     * @param ctx the parse tree
@@ -126,101 +259,193 @@ abstract class BaseParseListenerextends extends DSLSQLListener {
     */
   override def exitCommandValue(ctx: CommandValueContext): Unit = {}
 
-  override def enterStatement(ctx: StatementContext): Unit = {}
+  /**
+    * Enter a parse tree produced by {@link DSLSQLParser#rawCommandValue}.
+    *
+    * @param ctx the parse tree
+    */
+  override def enterRawCommandValue(ctx: RawCommandValueContext): Unit = {}
 
-  override def exitStatement(ctx: StatementContext): Unit = {}
+  /**
+    * Exit a parse tree produced by {@link DSLSQLParser#rawCommandValue}.
+    *
+    * @param ctx the parse tree
+    */
+  override def exitRawCommandValue(ctx: RawCommandValueContext): Unit = {}
 
-  override def enterSql(ctx: SqlContext): Unit = {}
-
-  override def enterFormat(ctx: FormatContext): Unit = {}
-
-  override def exitFormat(ctx: FormatContext): Unit = {}
-
-  override def enterPath(ctx: PathContext): Unit = {}
-
-  override def exitPath(ctx: PathContext): Unit = {}
-
-  override def enterTableName(ctx: TableNameContext): Unit = {}
-
-  override def exitTableName(ctx: TableNameContext): Unit = {}
-
-  override def enterCol(ctx: ColContext): Unit = {}
-
-  override def exitCol(ctx: ColContext): Unit = {}
-
-  override def enterQualifiedName(ctx: QualifiedNameContext): Unit = {}
-
-  override def exitQualifiedName(ctx: QualifiedNameContext): Unit = {}
-
-  override def enterIdentifier(ctx: IdentifierContext): Unit = {}
-
-  override def exitIdentifier(ctx: IdentifierContext): Unit = {}
-
-  override def enterStrictIdentifier(ctx: StrictIdentifierContext): Unit = {}
-
-  override def exitStrictIdentifier(ctx: StrictIdentifierContext): Unit = {}
-
-  override def enterQuotedIdentifier(ctx: QuotedIdentifierContext): Unit = {}
-
-  override def exitQuotedIdentifier(ctx: QuotedIdentifierContext): Unit = {}
-
-  override def visitTerminal(node: TerminalNode): Unit = {}
-
-  override def visitErrorNode(node: ErrorNode): Unit = {}
-
-  override def exitEveryRule(ctx: ParserRuleContext): Unit = {}
-
-  override def enterEveryRule(ctx: ParserRuleContext): Unit = {}
-
-  override def enterEnder(ctx: EnderContext): Unit = {}
-
-  override def exitEnder(ctx: EnderContext): Unit = {}
-
-  override def enterExpression(ctx: ExpressionContext): Unit = {}
-
-  override def exitExpression(ctx: ExpressionContext): Unit = {}
-
-  override def enterBooleanExpression(ctx: BooleanExpressionContext): Unit = {}
-
-  override def exitBooleanExpression(ctx: BooleanExpressionContext): Unit = {}
-
-  override def enterDb(ctx: DbContext): Unit = {}
-
-  override def exitDb(ctx: DbContext): Unit = {}
-
-  override def enterOverwrite(ctx: OverwriteContext): Unit = {}
-
-  override def exitOverwrite(ctx: OverwriteContext): Unit = {}
-
-  override def enterAppend(ctx: AppendContext): Unit = {}
-
-  override def exitAppend(ctx: AppendContext): Unit = {}
-
-  override def enterErrorIfExists(ctx: ErrorIfExistsContext): Unit = {}
-
-  override def exitErrorIfExists(ctx: ErrorIfExistsContext): Unit = {}
-
-  override def enterIgnore(ctx: IgnoreContext): Unit = {}
-
-  override def exitIgnore(ctx: IgnoreContext): Unit = {}
-
-  override def enterFunctionName(ctx: FunctionNameContext): Unit = {}
-
-  override def exitFunctionName(ctx: FunctionNameContext): Unit = {}
-
+  /**
+    * Enter a parse tree produced by {@link DSLSQLParser#setValue}.
+    *
+    * @param ctx the parse tree
+    */
   override def enterSetValue(ctx: SetValueContext): Unit = {}
 
+  /**
+    * Exit a parse tree produced by {@link DSLSQLParser#setValue}.
+    *
+    * @param ctx the parse tree
+    */
   override def exitSetValue(ctx: SetValueContext): Unit = {}
 
+  /**
+    * Enter a parse tree produced by {@link DSLSQLParser#setKey}.
+    *
+    * @param ctx the parse tree
+    */
   override def enterSetKey(ctx: SetKeyContext): Unit = {}
 
+  /**
+    * Exit a parse tree produced by {@link DSLSQLParser#setKey}.
+    *
+    * @param ctx the parse tree
+    */
   override def exitSetKey(ctx: SetKeyContext): Unit = {}
 
+  /**
+    * Enter a parse tree produced by {@link DSLSQLParser#db}.
+    *
+    * @param ctx the parse tree
+    */
+  override def enterDb(ctx: DbContext): Unit = {}
+
+  /**
+    * Exit a parse tree produced by {@link DSLSQLParser#db}.
+    *
+    * @param ctx the parse tree
+    */
+  override def exitDb(ctx: DbContext): Unit = {}
+
+  /**
+    * Enter a parse tree produced by {@link DSLSQLParser#asTableName}.
+    *
+    * @param ctx the parse tree
+    */
   override def enterAsTableName(ctx: AsTableNameContext): Unit = {}
 
+  /**
+    * Exit a parse tree produced by {@link DSLSQLParser#asTableName}.
+    *
+    * @param ctx the parse tree
+    */
   override def exitAsTableName(ctx: AsTableNameContext): Unit = {}
 
+  /**
+    * Enter a parse tree produced by {@link DSLSQLParser#tableName}.
+    *
+    * @param ctx the parse tree
+    */
+  override def enterTableName(ctx: TableNameContext): Unit = {}
+
+  /**
+    * Exit a parse tree produced by {@link DSLSQLParser#tableName}.
+    *
+    * @param ctx the parse tree
+    */
+  override def exitTableName(ctx: TableNameContext): Unit = {}
+
+  /**
+    * Enter a parse tree produced by {@link DSLSQLParser#functionName}.
+    *
+    * @param ctx the parse tree
+    */
+  override def enterFunctionName(ctx: FunctionNameContext): Unit = {}
+
+  /**
+    * Exit a parse tree produced by {@link DSLSQLParser#functionName}.
+    *
+    * @param ctx the parse tree
+    */
+  override def exitFunctionName(ctx: FunctionNameContext): Unit = {}
+
+  /**
+    * Enter a parse tree produced by {@link DSLSQLParser#colGroup}.
+    *
+    * @param ctx the parse tree
+    */
   override def enterColGroup(ctx: ColGroupContext): Unit = {}
 
+  /**
+    * Exit a parse tree produced by {@link DSLSQLParser#colGroup}.
+    *
+    * @param ctx the parse tree
+    */
   override def exitColGroup(ctx: ColGroupContext): Unit = {}
+
+  /**
+    * Enter a parse tree produced by {@link DSLSQLParser#col}.
+    *
+    * @param ctx the parse tree
+    */
+  override def enterCol(ctx: ColContext): Unit = {}
+
+  /**
+    * Exit a parse tree produced by {@link DSLSQLParser#col}.
+    *
+    * @param ctx the parse tree
+    */
+  override def exitCol(ctx: ColContext): Unit = {}
+
+  /**
+    * Enter a parse tree produced by {@link DSLSQLParser#qualifiedName}.
+    *
+    * @param ctx the parse tree
+    */
+  override def enterQualifiedName(ctx: QualifiedNameContext): Unit = {}
+
+  /**
+    * Exit a parse tree produced by {@link DSLSQLParser#qualifiedName}.
+    *
+    * @param ctx the parse tree
+    */
+  override def exitQualifiedName(ctx: QualifiedNameContext): Unit = {}
+
+  /**
+    * Enter a parse tree produced by {@link DSLSQLParser#identifier}.
+    *
+    * @param ctx the parse tree
+    */
+  override def enterIdentifier(ctx: IdentifierContext): Unit = {}
+
+  /**
+    * Exit a parse tree produced by {@link DSLSQLParser#identifier}.
+    *
+    * @param ctx the parse tree
+    */
+  override def exitIdentifier(ctx: IdentifierContext): Unit = {}
+
+  /**
+    * Enter a parse tree produced by {@link DSLSQLParser#strictIdentifier}.
+    *
+    * @param ctx the parse tree
+    */
+  override def enterStrictIdentifier(ctx: StrictIdentifierContext): Unit = {}
+
+  /**
+    * Exit a parse tree produced by {@link DSLSQLParser#strictIdentifier}.
+    *
+    * @param ctx the parse tree
+    */
+  override def exitStrictIdentifier(ctx: StrictIdentifierContext): Unit = {}
+
+  /**
+    * Enter a parse tree produced by {@link DSLSQLParser#quotedIdentifier}.
+    *
+    * @param ctx the parse tree
+    */
+  override def enterQuotedIdentifier(ctx: QuotedIdentifierContext): Unit = {}
+
+  /**
+    * Exit a parse tree produced by {@link DSLSQLParser#quotedIdentifier}.
+    *
+    * @param ctx the parse tree
+    */
+  override def exitQuotedIdentifier(ctx: QuotedIdentifierContext): Unit = {}
+
+  override def visitTerminal(terminalNode: TerminalNode): Unit = {}
+
+  override def visitErrorNode(errorNode: ErrorNode): Unit = {}
+
+  override def enterEveryRule(parserRuleContext: ParserRuleContext): Unit = {}
+
+  override def exitEveryRule(parserRuleContext: ParserRuleContext): Unit = {}
 }

@@ -3,8 +3,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>spark-service</artifactId>
         <groupId>com.liu.data</groupId>
+        <artifactId>spark-service</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -19,5 +19,31 @@
             <version>4.7.1</version>
         </dependency>
     </dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.antlr</groupId>
+                <artifactId>antlr4-maven-plugin</artifactId>
+                <version>4.7.1</version>
+
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>antlr4</goal>
+                        </goals>
+                        <!--<phase>generate-sources</phase>-->
+                    </execution>
+                </executions>
+                <configuration>
+                    <visitor>false</visitor>
+                    <sourceDirectory>src/main/resources</sourceDirectory>
+                    <outputDirectory>src/main/java/dsl/parser</outputDirectory>
+                </configuration>
+
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

@@ -18,7 +18,7 @@ public class RunSqlController {
 
   @ApiOperation(value = "查询sql", notes = "")
   @ApiImplicitParams({
-      @ApiImplicitParam(name = "sql", value = "查询 sql", required = true, dataType = "String")
+          @ApiImplicitParam(name = "sql", value = "查询 sql", required = true, dataType = "String")
   })
   @RequestMapping(value = "/runSql", method = {RequestMethod.POST, RequestMethod.GET})
   public ResponseResults runSql(@RequestParam String sql) {
@@ -30,5 +30,24 @@ public class RunSqlController {
       throw new RuntimeException(e.getMessage());
     }
   }
+
+
+  @ApiOperation(value = "执行脚本", notes = "")
+  @ApiImplicitParams({
+          @ApiImplicitParam(name = "sql", value = "查询脚本语句", required = true, dataType = "String")
+  })
+  @RequestMapping(value = "/runScript", method = {RequestMethod.POST, RequestMethod.GET})
+  public ResponseResults runScript(@RequestParam String sql) {
+
+    try {
+
+      return ResponseResults.ok(PlatformManger.runScript(sql));
+    } catch (Exception e) {
+      e.printStackTrace();
+      throw new RuntimeException(e.getMessage());
+    }
+  }
+
+
 
 }
