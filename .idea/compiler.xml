@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="dsl" />
         <module name="spark-service-core" />
+        <module name="streams" />
       </profile>
     </annotationProcessing>
   </component>

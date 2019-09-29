@@ -9,9 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spark-service-core</artifactId>
-
-
+    <artifactId>streams</artifactId>
 
     <dependencies>
         <dependency>
@@ -48,13 +46,13 @@
 
         <!-- kafka -->
         <!--<dependency>-->
-            <!--<groupId>org.apache.spark</groupId>-->
-            <!--<artifactId>spark-streaming-kafka-0-8_${scala.binary.version}</artifactId>-->
-            <!--&lt;!&ndash;<scope>${scope.type}</scope>&ndash;&gt;-->
+        <!--<groupId>org.apache.spark</groupId>-->
+        <!--<artifactId>spark-streaming-kafka-0-8_${scala.binary.version}</artifactId>-->
+        <!--&lt;!&ndash;<scope>${scope.type}</scope>&ndash;&gt;-->
         <!--</dependency>-->
         <!--<dependency>-->
-            <!--<groupId>org.apache.kafka</groupId>-->
-            <!--<artifactId>kafka-clients</artifactId>-->
+        <!--<groupId>org.apache.kafka</groupId>-->
+        <!--<artifactId>kafka-clients</artifactId>-->
         <!--</dependency>-->
         <dependency>
             <groupId>org.apache.spark</groupId>
@@ -119,9 +117,6 @@
             </plugin>
         </plugins>
     </build>
-
-
-
 
 
 </project>

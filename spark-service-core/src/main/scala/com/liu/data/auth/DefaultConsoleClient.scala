@@ -12,6 +12,7 @@ class DefaultConsoleClient extends TableAuth {
     DefaultConsoleClient.set(tables)
     List(TableAuthResult(true, ""))
   }
+
 }
 
 // for testing only
