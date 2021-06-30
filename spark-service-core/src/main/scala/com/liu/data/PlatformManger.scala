@@ -6,7 +6,7 @@ import org.apache.spark.sql.SparkSession
 
 object PlatformManger {
 
-  val sparkSession = getSparkSession()
+   private var sparkSession: SparkSession = null
 
   def getSparkSession(): SparkSession = {
     SparkSession
@@ -14,6 +14,12 @@ object PlatformManger {
       .master("local[2]")
       //      .enableHiveSupport()
       .getOrCreate()
+  }
+  def run(): Boolean = {
+    sparkSession = getSparkSession()
+    // 初始化脚本
+
+    sparkSession.sparkContext.getConf.getBoolean("is_start_server", true)
   }
 
   def runSql(sql: String) : String = {

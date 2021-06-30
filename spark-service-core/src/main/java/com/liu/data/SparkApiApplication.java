@@ -13,6 +13,9 @@ import org.springframework.context.annotation.Configuration;
 public class SparkApiApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SparkApiApplication.class, args);
+        if (PlatformManger.run()) {
+            SpringApplication.run(SparkApiApplication.class, args);
+        }
+
     }
 }

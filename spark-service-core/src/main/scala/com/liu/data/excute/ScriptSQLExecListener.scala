@@ -76,15 +76,6 @@ class ScriptSQLExecListener(val _sparkSession: SparkSession
     */
   override def exitSql(ctx: SqlContext): Unit = {
 
-    def getText = {
-      val input = ctx.start.getTokenSource().asInstanceOf[DSLSQLLexer]._input
-
-      val start = ctx.start.getStartIndex()
-      val stop = ctx.stop.getStopIndex()
-      val interval = new Interval(start, stop)
-      input.getText(interval)
-    }
-
     val PREFIX = ctx.getChild(0).getText.toLowerCase()
 
     PREFIX match {
