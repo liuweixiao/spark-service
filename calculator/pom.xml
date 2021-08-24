@@ -3,13 +3,18 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>com.liu.data</groupId>
         <artifactId>spark-service</artifactId>
+        <groupId>com.liu.data</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>dsl</artifactId>
+    <artifactId>calculator</artifactId>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
 
 
     <dependencies>
@@ -22,11 +27,11 @@
 
 
     <build>
-<!--        <plugins>-->
+        <plugins>
 <!--            <plugin>-->
 <!--                <groupId>org.antlr</groupId>-->
 <!--                <artifactId>antlr4-maven-plugin</artifactId>-->
-<!--                <version>4.7.1</version>-->
+<!--                <version>4.9.1</version>-->
 
 <!--                <executions>-->
 <!--                    <execution>-->
@@ -37,13 +42,15 @@
 <!--                    </execution>-->
 <!--                </executions>-->
 <!--                <configuration>-->
-<!--                    <visitor>false</visitor>-->
+<!--&lt;!&ndash;                    <visitor>true</visitor>&ndash;&gt;-->
+<!--                    <listener>true</listener>-->
+<!--                    <visitor>true</visitor>-->
 <!--                    <sourceDirectory>src/main/resources</sourceDirectory>-->
 <!--                    <outputDirectory>src/main/java/dsl/parser</outputDirectory>-->
 <!--                </configuration>-->
 
 <!--            </plugin>-->
-<!--        </plugins>-->
+        </plugins>
     </build>
 
 </project>

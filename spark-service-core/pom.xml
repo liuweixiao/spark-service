@@ -20,6 +20,11 @@
         </dependency>
 
         <dependency>
+            <groupId>com.liu.data</groupId>
+            <artifactId>calculator</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-hive_${scala.binary.version}</artifactId>
             <scope>${scope.type}</scope>
