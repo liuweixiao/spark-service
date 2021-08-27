@@ -17,11 +17,13 @@
         <dependency>
             <groupId>com.liu.data</groupId>
             <artifactId>dsl</artifactId>
+            <version>${project.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.liu.data</groupId>
             <artifactId>calculator</artifactId>
+            <version>${project.version}</version>
         </dependency>
 
         <dependency>

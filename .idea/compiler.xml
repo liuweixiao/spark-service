@@ -14,5 +14,13 @@
         <module name="streams" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="calculator" target="1.8" />
+      <module name="dsl" target="1.8" />
+      <module name="ratelimit" target="1.8" />
+      <module name="spark-service" target="1.8" />
+      <module name="spark-service-core" target="1.8" />
+      <module name="streams" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

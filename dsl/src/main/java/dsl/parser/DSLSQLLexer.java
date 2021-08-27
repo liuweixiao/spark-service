@@ -1,4 +1,4 @@
-// Generated from DSLSQL.g4 by ANTLR 4.7.1
+// Generated from /Users/liuwx/IdeaProjects/work/scala/spark-service/dsl/src/main/resources/DSLSQL.g4 by ANTLR 4.9.1
 
 package dsl.parser;
 
@@ -13,7 +13,7 @@ import org.antlr.v4.runtime.misc.*;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class DSLSQLLexer extends Lexer {
-	static { RuntimeMetaData.checkVersion("4.7.1", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.9.1", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -35,33 +35,42 @@ public class DSLSQLLexer extends Lexer {
 		"DEFAULT_MODE"
 	};
 
-	public static final String[] ruleNames = {
-		"T__0", "T__1", "T__2", "T__3", "T__4", "T__5", "T__6", "T__7", "T__8", 
-		"T__9", "AS", "INTO", "LOAD", "SAVE", "SELECT", "INSERT", "CREATE", "DROP", 
-		"REFRESH", "SET", "CONNECT", "TRAIN", "RUN", "PREDICT", "REGISTER", "UNREGISTER", 
-		"INCLUDE", "OPTIONS", "WHERE", "PARTITIONBY", "OVERWRITE", "APPEND", "ERRORIfExists", 
-		"IGNORE", "STRING", "BLOCK_STRING", "IDENTIFIER", "BACKQUOTED_IDENTIFIER", 
-		"DIGIT", "LETTER", "EXECUTE_COMMAND", "EXECUTE_TOKEN", "SIMPLE_COMMENT", 
-		"BRACKETED_EMPTY_COMMENT", "BRACKETED_COMMENT", "WS", "UNRECOGNIZED"
-	};
+	private static String[] makeRuleNames() {
+		return new String[] {
+			"T__0", "T__1", "T__2", "T__3", "T__4", "T__5", "T__6", "T__7", "T__8", 
+			"T__9", "AS", "INTO", "LOAD", "SAVE", "SELECT", "INSERT", "CREATE", "DROP", 
+			"REFRESH", "SET", "CONNECT", "TRAIN", "RUN", "PREDICT", "REGISTER", "UNREGISTER", 
+			"INCLUDE", "OPTIONS", "WHERE", "PARTITIONBY", "OVERWRITE", "APPEND", 
+			"ERRORIfExists", "IGNORE", "STRING", "BLOCK_STRING", "IDENTIFIER", "BACKQUOTED_IDENTIFIER", 
+			"DIGIT", "LETTER", "EXECUTE_COMMAND", "EXECUTE_TOKEN", "SIMPLE_COMMENT", 
+			"BRACKETED_EMPTY_COMMENT", "BRACKETED_COMMENT", "WS", "UNRECOGNIZED"
+		};
+	}
+	public static final String[] ruleNames = makeRuleNames();
 
-	private static final String[] _LITERAL_NAMES = {
-		null, "'.'", "';'", "'='", "'and'", "'-'", "'/'", "'>'", "'<'", "'~'", 
-		"','", "'as'", "'into'", "'load'", "'save'", "'select'", "'insert'", "'create'", 
-		"'drop'", "'refresh'", "'set'", "'connect'", "'train'", "'run'", "'predict'", 
-		"'register'", "'unregister'", "'include'", "'options'", "'where'", null, 
-		"'overwrite'", "'append'", "'errorIfExists'", "'ignore'", null, null, 
-		null, null, null, "'!'", null, "'/**/'"
-	};
-	private static final String[] _SYMBOLIC_NAMES = {
-		null, null, null, null, null, null, null, null, null, null, null, "AS", 
-		"INTO", "LOAD", "SAVE", "SELECT", "INSERT", "CREATE", "DROP", "REFRESH", 
-		"SET", "CONNECT", "TRAIN", "RUN", "PREDICT", "REGISTER", "UNREGISTER", 
-		"INCLUDE", "OPTIONS", "WHERE", "PARTITIONBY", "OVERWRITE", "APPEND", "ERRORIfExists", 
-		"IGNORE", "STRING", "BLOCK_STRING", "IDENTIFIER", "BACKQUOTED_IDENTIFIER", 
-		"EXECUTE_COMMAND", "EXECUTE_TOKEN", "SIMPLE_COMMENT", "BRACKETED_EMPTY_COMMENT", 
-		"BRACKETED_COMMENT", "WS", "UNRECOGNIZED"
-	};
+	private static String[] makeLiteralNames() {
+		return new String[] {
+			null, "'.'", "';'", "'='", "'and'", "'-'", "'/'", "'>'", "'<'", "'~'", 
+			"','", "'as'", "'into'", "'load'", "'save'", "'select'", "'insert'", 
+			"'create'", "'drop'", "'refresh'", "'set'", "'connect'", "'train'", "'run'", 
+			"'predict'", "'register'", "'unregister'", "'include'", "'options'", 
+			"'where'", null, "'overwrite'", "'append'", "'errorIfExists'", "'ignore'", 
+			null, null, null, null, null, "'!'", null, "'/**/'"
+		};
+	}
+	private static final String[] _LITERAL_NAMES = makeLiteralNames();
+	private static String[] makeSymbolicNames() {
+		return new String[] {
+			null, null, null, null, null, null, null, null, null, null, null, "AS", 
+			"INTO", "LOAD", "SAVE", "SELECT", "INSERT", "CREATE", "DROP", "REFRESH", 
+			"SET", "CONNECT", "TRAIN", "RUN", "PREDICT", "REGISTER", "UNREGISTER", 
+			"INCLUDE", "OPTIONS", "WHERE", "PARTITIONBY", "OVERWRITE", "APPEND", 
+			"ERRORIfExists", "IGNORE", "STRING", "BLOCK_STRING", "IDENTIFIER", "BACKQUOTED_IDENTIFIER", 
+			"EXECUTE_COMMAND", "EXECUTE_TOKEN", "SIMPLE_COMMENT", "BRACKETED_EMPTY_COMMENT", 
+			"BRACKETED_COMMENT", "WS", "UNRECOGNIZED"
+		};
+	}
+	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
 
 	/**

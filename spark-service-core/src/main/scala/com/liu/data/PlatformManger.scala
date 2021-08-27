@@ -5,8 +5,11 @@ import com.liu.data.utils.JacksonUtil
 import org.apache.spark.sql.SparkSession
 
 object PlatformManger {
+  println("=================222222=====================")
 
   val sparkSession = getSparkSession()
+  println("=================11111111=====================")
+
 
   def getSparkSession(): SparkSession = {
     SparkSession
@@ -42,6 +45,13 @@ object PlatformManger {
 
   def main(args: Array[String]): Unit = {
 
+    println("======================================")
+//    sparkSession.sql(
+//      """
+//        |select  'a' as a ,  20 as b
+//        |""".stripMargin).createOrReplaceTempView("temp")
+//    println(sparkSession.sql("select a  from temp where b > 18").explain())
+    println(sparkSession.sql("select 1 as a ； ").count )
   }
 
 }

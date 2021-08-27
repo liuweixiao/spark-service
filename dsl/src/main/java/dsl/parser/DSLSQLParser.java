@@ -1,4 +1,4 @@
-// Generated from DSLSQL.g4 by ANTLR 4.7.1
+// Generated from /Users/liuwx/IdeaProjects/work/scala/spark-service/dsl/src/main/resources/DSLSQL.g4 by ANTLR 4.9.1
 
 package dsl.parser;
 
@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class DSLSQLParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.7.1", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.9.1", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -36,32 +36,41 @@ public class DSLSQLParser extends Parser {
 		RULE_setKey = 19, RULE_db = 20, RULE_asTableName = 21, RULE_tableName = 22, 
 		RULE_functionName = 23, RULE_colGroup = 24, RULE_col = 25, RULE_qualifiedName = 26, 
 		RULE_identifier = 27, RULE_strictIdentifier = 28, RULE_quotedIdentifier = 29;
-	public static final String[] ruleNames = {
-		"statement", "sql", "as", "into", "saveMode", "where", "whereExpressions", 
-		"overwrite", "append", "errorIfExists", "ignore", "booleanExpression", 
-		"expression", "ender", "format", "path", "commandValue", "rawCommandValue", 
-		"setValue", "setKey", "db", "asTableName", "tableName", "functionName", 
-		"colGroup", "col", "qualifiedName", "identifier", "strictIdentifier", 
-		"quotedIdentifier"
-	};
+	private static String[] makeRuleNames() {
+		return new String[] {
+			"statement", "sql", "as", "into", "saveMode", "where", "whereExpressions", 
+			"overwrite", "append", "errorIfExists", "ignore", "booleanExpression", 
+			"expression", "ender", "format", "path", "commandValue", "rawCommandValue", 
+			"setValue", "setKey", "db", "asTableName", "tableName", "functionName", 
+			"colGroup", "col", "qualifiedName", "identifier", "strictIdentifier", 
+			"quotedIdentifier"
+		};
+	}
+	public static final String[] ruleNames = makeRuleNames();
 
-	private static final String[] _LITERAL_NAMES = {
-		null, "'.'", "';'", "'='", "'and'", "'-'", "'/'", "'>'", "'<'", "'~'", 
-		"','", "'as'", "'into'", "'load'", "'save'", "'select'", "'insert'", "'create'", 
-		"'drop'", "'refresh'", "'set'", "'connect'", "'train'", "'run'", "'predict'", 
-		"'register'", "'unregister'", "'include'", "'options'", "'where'", null, 
-		"'overwrite'", "'append'", "'errorIfExists'", "'ignore'", null, null, 
-		null, null, null, "'!'", null, "'/**/'"
-	};
-	private static final String[] _SYMBOLIC_NAMES = {
-		null, null, null, null, null, null, null, null, null, null, null, "AS", 
-		"INTO", "LOAD", "SAVE", "SELECT", "INSERT", "CREATE", "DROP", "REFRESH", 
-		"SET", "CONNECT", "TRAIN", "RUN", "PREDICT", "REGISTER", "UNREGISTER", 
-		"INCLUDE", "OPTIONS", "WHERE", "PARTITIONBY", "OVERWRITE", "APPEND", "ERRORIfExists", 
-		"IGNORE", "STRING", "BLOCK_STRING", "IDENTIFIER", "BACKQUOTED_IDENTIFIER", 
-		"EXECUTE_COMMAND", "EXECUTE_TOKEN", "SIMPLE_COMMENT", "BRACKETED_EMPTY_COMMENT", 
-		"BRACKETED_COMMENT", "WS", "UNRECOGNIZED"
-	};
+	private static String[] makeLiteralNames() {
+		return new String[] {
+			null, "'.'", "';'", "'='", "'and'", "'-'", "'/'", "'>'", "'<'", "'~'", 
+			"','", "'as'", "'into'", "'load'", "'save'", "'select'", "'insert'", 
+			"'create'", "'drop'", "'refresh'", "'set'", "'connect'", "'train'", "'run'", 
+			"'predict'", "'register'", "'unregister'", "'include'", "'options'", 
+			"'where'", null, "'overwrite'", "'append'", "'errorIfExists'", "'ignore'", 
+			null, null, null, null, null, "'!'", null, "'/**/'"
+		};
+	}
+	private static final String[] _LITERAL_NAMES = makeLiteralNames();
+	private static String[] makeSymbolicNames() {
+		return new String[] {
+			null, null, null, null, null, null, null, null, null, null, null, "AS", 
+			"INTO", "LOAD", "SAVE", "SELECT", "INSERT", "CREATE", "DROP", "REFRESH", 
+			"SET", "CONNECT", "TRAIN", "RUN", "PREDICT", "REGISTER", "UNREGISTER", 
+			"INCLUDE", "OPTIONS", "WHERE", "PARTITIONBY", "OVERWRITE", "APPEND", 
+			"ERRORIfExists", "IGNORE", "STRING", "BLOCK_STRING", "IDENTIFIER", "BACKQUOTED_IDENTIFIER", 
+			"EXECUTE_COMMAND", "EXECUTE_TOKEN", "SIMPLE_COMMENT", "BRACKETED_EMPTY_COMMENT", 
+			"BRACKETED_COMMENT", "WS", "UNRECOGNIZED"
+		};
+	}
+	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
 
 	/**
@@ -111,6 +120,7 @@ public class DSLSQLParser extends Parser {
 		super(input);
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
+
 	public static class StatementContext extends ParserRuleContext {
 		public List<SqlContext> sql() {
 			return getRuleContexts(SqlContext.class);
@@ -135,6 +145,11 @@ public class DSLSQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof DSLSQLListener ) ((DSLSQLListener)listener).exitStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DSLSQLVisitor ) return ((DSLSQLVisitor<? extends T>)visitor).visitStatement(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -294,6 +309,11 @@ public class DSLSQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof DSLSQLListener ) ((DSLSQLListener)listener).exitSql(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DSLSQLVisitor ) return ((DSLSQLVisitor<? extends T>)visitor).visitSql(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1040,6 +1060,11 @@ public class DSLSQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof DSLSQLListener ) ((DSLSQLListener)listener).exitAs(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DSLSQLVisitor ) return ((DSLSQLVisitor<? extends T>)visitor).visitAs(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final AsContext as() throws RecognitionException {
@@ -1076,6 +1101,11 @@ public class DSLSQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof DSLSQLListener ) ((DSLSQLListener)listener).exitInto(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DSLSQLVisitor ) return ((DSLSQLVisitor<? extends T>)visitor).visitInto(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1116,6 +1146,11 @@ public class DSLSQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof DSLSQLListener ) ((DSLSQLListener)listener).exitSaveMode(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DSLSQLVisitor ) return ((DSLSQLVisitor<? extends T>)visitor).visitSaveMode(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1163,6 +1198,11 @@ public class DSLSQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof DSLSQLListener ) ((DSLSQLListener)listener).exitWhere(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DSLSQLVisitor ) return ((DSLSQLVisitor<? extends T>)visitor).visitWhere(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1221,6 +1261,11 @@ public class DSLSQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof DSLSQLListener ) ((DSLSQLListener)listener).exitWhereExpressions(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DSLSQLVisitor ) return ((DSLSQLVisitor<? extends T>)visitor).visitWhereExpressions(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final WhereExpressionsContext whereExpressions() throws RecognitionException {
@@ -1270,6 +1315,7 @@ public class DSLSQLParser extends Parser {
 	}
 
 	public static class OverwriteContext extends ParserRuleContext {
+		public TerminalNode OVERWRITE() { return getToken(DSLSQLParser.OVERWRITE, 0); }
 		public OverwriteContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -1281,6 +1327,11 @@ public class DSLSQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof DSLSQLListener ) ((DSLSQLListener)listener).exitOverwrite(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DSLSQLVisitor ) return ((DSLSQLVisitor<? extends T>)visitor).visitOverwrite(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1306,6 +1357,7 @@ public class DSLSQLParser extends Parser {
 	}
 
 	public static class AppendContext extends ParserRuleContext {
+		public TerminalNode APPEND() { return getToken(DSLSQLParser.APPEND, 0); }
 		public AppendContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -1317,6 +1369,11 @@ public class DSLSQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof DSLSQLListener ) ((DSLSQLListener)listener).exitAppend(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DSLSQLVisitor ) return ((DSLSQLVisitor<? extends T>)visitor).visitAppend(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1342,6 +1399,7 @@ public class DSLSQLParser extends Parser {
 	}
 
 	public static class ErrorIfExistsContext extends ParserRuleContext {
+		public TerminalNode ERRORIfExists() { return getToken(DSLSQLParser.ERRORIfExists, 0); }
 		public ErrorIfExistsContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -1353,6 +1411,11 @@ public class DSLSQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof DSLSQLListener ) ((DSLSQLListener)listener).exitErrorIfExists(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DSLSQLVisitor ) return ((DSLSQLVisitor<? extends T>)visitor).visitErrorIfExists(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1378,6 +1441,7 @@ public class DSLSQLParser extends Parser {
 	}
 
 	public static class IgnoreContext extends ParserRuleContext {
+		public TerminalNode IGNORE() { return getToken(DSLSQLParser.IGNORE, 0); }
 		public IgnoreContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -1389,6 +1453,11 @@ public class DSLSQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof DSLSQLListener ) ((DSLSQLListener)listener).exitIgnore(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DSLSQLVisitor ) return ((DSLSQLVisitor<? extends T>)visitor).visitIgnore(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1428,6 +1497,11 @@ public class DSLSQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof DSLSQLListener ) ((DSLSQLListener)listener).exitBooleanExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DSLSQLVisitor ) return ((DSLSQLVisitor<? extends T>)visitor).visitBooleanExpression(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1471,6 +1545,11 @@ public class DSLSQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof DSLSQLListener ) ((DSLSQLListener)listener).exitExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DSLSQLVisitor ) return ((DSLSQLVisitor<? extends T>)visitor).visitExpression(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1521,6 +1600,11 @@ public class DSLSQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof DSLSQLListener ) ((DSLSQLListener)listener).exitEnder(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DSLSQLVisitor ) return ((DSLSQLVisitor<? extends T>)visitor).visitEnder(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final EnderContext ender() throws RecognitionException {
@@ -1559,6 +1643,11 @@ public class DSLSQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof DSLSQLListener ) ((DSLSQLListener)listener).exitFormat(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DSLSQLVisitor ) return ((DSLSQLVisitor<? extends T>)visitor).visitFormat(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1601,6 +1690,11 @@ public class DSLSQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof DSLSQLListener ) ((DSLSQLListener)listener).exitPath(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DSLSQLVisitor ) return ((DSLSQLVisitor<? extends T>)visitor).visitPath(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1655,6 +1749,11 @@ public class DSLSQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof DSLSQLListener ) ((DSLSQLListener)listener).exitCommandValue(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DSLSQLVisitor ) return ((DSLSQLVisitor<? extends T>)visitor).visitCommandValue(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1719,6 +1818,11 @@ public class DSLSQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof DSLSQLListener ) ((DSLSQLListener)listener).exitRawCommandValue(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DSLSQLVisitor ) return ((DSLSQLVisitor<? extends T>)visitor).visitRawCommandValue(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1828,6 +1932,11 @@ public class DSLSQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof DSLSQLListener ) ((DSLSQLListener)listener).exitSetValue(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DSLSQLVisitor ) return ((DSLSQLVisitor<? extends T>)visitor).visitSetValue(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final SetValueContext setValue() throws RecognitionException {
@@ -1894,6 +2003,11 @@ public class DSLSQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof DSLSQLListener ) ((DSLSQLListener)listener).exitSetKey(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DSLSQLVisitor ) return ((DSLSQLVisitor<? extends T>)visitor).visitSetKey(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final SetKeyContext setKey() throws RecognitionException {
@@ -1936,6 +2050,11 @@ public class DSLSQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof DSLSQLListener ) ((DSLSQLListener)listener).exitDb(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DSLSQLVisitor ) return ((DSLSQLVisitor<? extends T>)visitor).visitDb(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final DbContext db() throws RecognitionException {
@@ -1973,6 +2092,7 @@ public class DSLSQLParser extends Parser {
 	}
 
 	public static class AsTableNameContext extends ParserRuleContext {
+		public TerminalNode AS() { return getToken(DSLSQLParser.AS, 0); }
 		public TableNameContext tableName() {
 			return getRuleContext(TableNameContext.class,0);
 		}
@@ -1987,6 +2107,11 @@ public class DSLSQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof DSLSQLListener ) ((DSLSQLListener)listener).exitAsTableName(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DSLSQLVisitor ) return ((DSLSQLVisitor<? extends T>)visitor).visitAsTableName(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2029,6 +2154,11 @@ public class DSLSQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof DSLSQLListener ) ((DSLSQLListener)listener).exitTableName(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DSLSQLVisitor ) return ((DSLSQLVisitor<? extends T>)visitor).visitTableName(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final TableNameContext tableName() throws RecognitionException {
@@ -2068,6 +2198,11 @@ public class DSLSQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof DSLSQLListener ) ((DSLSQLListener)listener).exitFunctionName(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DSLSQLVisitor ) return ((DSLSQLVisitor<? extends T>)visitor).visitFunctionName(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final FunctionNameContext functionName() throws RecognitionException {
@@ -2106,6 +2241,11 @@ public class DSLSQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof DSLSQLListener ) ((DSLSQLListener)listener).exitColGroup(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DSLSQLVisitor ) return ((DSLSQLVisitor<? extends T>)visitor).visitColGroup(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2148,6 +2288,11 @@ public class DSLSQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof DSLSQLListener ) ((DSLSQLListener)listener).exitCol(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DSLSQLVisitor ) return ((DSLSQLVisitor<? extends T>)visitor).visitCol(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ColContext col() throws RecognitionException {
@@ -2189,6 +2334,11 @@ public class DSLSQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof DSLSQLListener ) ((DSLSQLListener)listener).exitQualifiedName(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DSLSQLVisitor ) return ((DSLSQLVisitor<? extends T>)visitor).visitQualifiedName(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2246,6 +2396,11 @@ public class DSLSQLParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof DSLSQLListener ) ((DSLSQLListener)listener).exitIdentifier(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DSLSQLVisitor ) return ((DSLSQLVisitor<? extends T>)visitor).visitIdentifier(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final IdentifierContext identifier() throws RecognitionException {
@@ -2285,6 +2440,11 @@ public class DSLSQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof DSLSQLListener ) ((DSLSQLListener)listener).exitStrictIdentifier(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DSLSQLVisitor ) return ((DSLSQLVisitor<? extends T>)visitor).visitStrictIdentifier(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2337,6 +2497,11 @@ public class DSLSQLParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof DSLSQLListener ) ((DSLSQLListener)listener).exitQuotedIdentifier(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DSLSQLVisitor ) return ((DSLSQLVisitor<? extends T>)visitor).visitQuotedIdentifier(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
