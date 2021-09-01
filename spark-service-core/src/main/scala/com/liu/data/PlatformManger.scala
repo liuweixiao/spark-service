@@ -3,6 +3,7 @@ package com.liu.data
 import com.liu.data.excute.{ScriptSQLExec, ScriptSQLExecListener}
 import com.liu.data.utils.JacksonUtil
 import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.execution.ReplaceToJsonRelation
 
 object PlatformManger {
   println("=================222222=====================")
@@ -15,6 +16,7 @@ object PlatformManger {
     SparkSession
       .builder()
       .master("local[2]")
+      .withExtensions(e => e.injectPostHocResolutionRule(ReplaceToJsonRelation))
       //      .enableHiveSupport()
       .getOrCreate()
   }

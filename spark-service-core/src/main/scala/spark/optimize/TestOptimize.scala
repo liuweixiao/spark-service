@@ -31,11 +31,23 @@ object TestOptimize {
         |
         |
       """.stripMargin
-    val df = PlatformManger.sparkSession.sql(sql)
+    val sparkSession = PlatformManger.sparkSession
+    val df = sparkSession.sql(sql)
     df.write.mode(SaveMode.Overwrite).json("spark/data/tmp.json")
     df.write.mode(SaveMode.Overwrite).csv("spark/data/tmp.csv")
 
-    PlatformManger.sparkSession.read.json("")
+
+    sparkSession.read
+      .json("spark/data/tmp.json").createOrReplaceTempView("t")
+    sparkSession.sql(
+      """
+        | select count(1) from t
+        | where a = "a"
+      """.stripMargin).collect()
+
+
+
+    Thread.sleep(100000000)
 
   }
 
