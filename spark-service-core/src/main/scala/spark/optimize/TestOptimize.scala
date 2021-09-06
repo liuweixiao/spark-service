@@ -32,6 +32,7 @@ object TestOptimize {
         |
       """.stripMargin
     val sparkSession = PlatformManger.sparkSession
+    sparkSession.sql(sql).count()
     val df = sparkSession.sql(sql)
     df.write.mode(SaveMode.Overwrite).json("spark/data/tmp.json")
     df.write.mode(SaveMode.Overwrite).csv("spark/data/tmp.csv")

@@ -16,6 +16,7 @@ object PlatformManger {
     SparkSession
       .builder()
       .master("local[2]")
+      .enableHiveSupport()
       .withExtensions(e => e.injectPostHocResolutionRule(ReplaceToJsonRelation))
       //      .enableHiveSupport()
       .getOrCreate()
