@@ -7,10 +7,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ratelimit" />
         <module name="calculator" />
-        <module name="spark-service-core" />
         <module name="dsl" />
+        <module name="ratelimit" />
+        <module name="spark-service-core" />
         <module name="streams" />
       </profile>
     </annotationProcessing>
@@ -19,6 +19,8 @@
       <module name="dsl" target="1.8" />
       <module name="ratelimit" target="1.8" />
       <module name="spark-service" target="1.8" />
+      <module name="spark-service (1)" target="1.8" />
+      <module name="spark-service (2)" target="1.8" />
       <module name="spark-service-core" target="1.8" />
       <module name="streams" target="1.8" />
     </bytecodeTargetLevel>
